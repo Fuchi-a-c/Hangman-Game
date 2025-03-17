@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content=""width=device-width, initial-scale="1.0">
+        <title>
+            Hangman Game
+        </title>
+        <link rel="stylesheet" href="style.css">
+        <script src="../scripts/expanded-list.js" defer></script>
+        <script src="../scripts/word-list.js" defer></script>
+        <script src="../scripts/script.js" defer></script>
+    </head>
+
+    <body>
+        <div class="scoreContainer">
+            <h4>High Score: </h4>
+            <h4 class="high_score"><b>0</b></h4>
+            <h4>Current Score: </h4>
+            <h4 class="current_score"><b>0</b></h4>
+        </div>
+        <div class="menu-box"> 
+            <nav>
+                <ul class="frontbar"> 
+                    <li onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                </ul>
+                <ul class="sidebar">
+                    <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="30" viewBox="0 -960 960 960" width="30"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                    <form class="color-picker" action="">
+                        <fieldset>
+                          <legend class="visually-hidden">Pick a color scheme</legend>
+                          <label for="light" class="visually-hidden">Light</label>
+                          <input type="radio" name="theme" id="light" checked>
+                      
+                          <label for="pink" class="visually-hidden">Pink</label>
+                          <input type="radio" id="pink" name="theme">
+                      
+                          <label for="blue" class="visually-hidden">Blue</label>
+                          <input type="radio" id="blue" name="theme">
+                      
+                          <label for="green" class="visually-hidden">Green</label>
+                          <input type="radio" id="green" name="theme">
+                      
+                          <label for="purple" class="visually-hidden">Purple</label>
+                          <input type="radio" id="purple" name="theme">
+            
+                          <label for="dark" class="visually-hidden">Dark</label>
+                          <input type="radio" id="dark" name="theme">
+            
+                        </fieldset>
+                      </form>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="game-modal">
+            <div class="content">
+                <img src="../images/lost.gif" alt="gif">
+                <h4>Game Over!</h4>
+                <p>The correct word was: <b>rainbow</b></p>
+                <button class="play-again">Play Again</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="hangman-box">
+                <img src="../images/hangman-0.svg" alt="Hangman-base-img">
+                <h1>Hangman Game</h1>
+            </div>
+            <div class="difficulty-menu">
+                <label for="difficulty">Select Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                    <option value="any">Any</option>
+                </select>
+                <span class="custom-arrow"></span>
+                <label for="word-bank">Use Word Bank?</label>
+                <select id="word-bank">
+                    <option value="no">No</option>
+                    <option value="yes">Yes (disables hints)</option>
+                </select>
+                <span class="custom-arrow"></span>
+            </div>
+            <div class="game-box">
+                <ul class="word-display"></ul>
+                <h4 class="hint-text">Hint: <b>idk!</b></h4>
+                <h4 class="guesses-text">Incorrect guesses: <b>0 / 6</b></h4>
+                <div class="keyboard"></div>
+                <div class="keyboard2"></div>
+                <button id="skip-button">Skip</button>
+                <button id="music-button">Play Music</button>
+                <audio id="background-music" autoplay loop>
+                  <source src="../audio/BW 109 Professor Juniper.ogg" type="audio/ogg">
+                </audio>
+            </div>
+    </div>
+</body>
+</html>
