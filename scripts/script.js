@@ -27,7 +27,7 @@ const resetGame = () => {
     currentHighScore = HighScore();
     high_score.innerText = currentHighScore;
     current_score.innerText = currentScore;
-    hangmanImage.src = `../images/hangman-${wrongGuessCount}.svg`;
+    hangmanImage.src = `./images/hangman-${wrongGuessCount}.svg`;
     guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
     keyboardDiv.querySelectorAll("button").forEach(btn => btn.disabled = false);
     keyboardDiv2.querySelectorAll("button").forEach(btn => btn.disabled = false);
@@ -121,7 +121,7 @@ const gameOver = (isVictory) => {
     //After 600ms of game complete.. showing modal with relevant details
     setTimeout(() => {
         const modalText = isVictory ? `You found the word:`: `The correct word was:`;
-        gameModal.querySelector("img").src = `../images/${isVictory ? 'victory' : 'lost'}.gif`;
+        gameModal.querySelector("img").src = `./images/${isVictory ? 'victory' : 'lost'}.gif`;
         gameModal.querySelector("h4").innerText = `${isVictory ? 'Congrats!' : 'Game Over!'}`;
         gameModal.querySelector("p").innerHTML = `${modalText} <b>${currentWord}</b>`;
         gameModal.classList.add("show");
@@ -147,7 +147,7 @@ const gameOver = (isVictory) => {
         } else {
             //If clicked letter doesn't exist then update the wrongGuessCount and hangman image
             wrongGuessCount++;
-            hangmanImage.src = `../images/hangman-${wrongGuessCount}.svg`
+            hangmanImage.src = `./images/hangman-${wrongGuessCount}.svg`
         }
     
         button.disabled = true;
@@ -172,7 +172,7 @@ const initGameInput = (clickedLetter) => {
     } else {
         //If clicked letter doesn't exist then update the wrongGuessCount and hangman image
         wrongGuessCount++;
-        hangmanImage.src = `../images/hangman-${wrongGuessCount}.svg`
+        hangmanImage.src = `./images/hangman-${wrongGuessCount}.svg`
     }
 
     //button.disabled = true;
